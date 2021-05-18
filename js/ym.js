@@ -2,10 +2,19 @@
 
 ymaps.ready(init);
 function init(){
-    var myMap = new ymaps.Map("map", {
-        center: [55.043514, 82.710420],
-        zoom: 11
-    });
+    var width = document.documentElement.clientWidth;
+    var myMap;
+
+    if (width >= 1000) {
+        myMap = new ymaps.Map("map", {
+            center: [55.043514, 82.710420],
+            zoom: 11
+        });
+    } else {
+        myMap = new ymaps.Map("map", {
+            center: [55.043514, 82.710420],
+            zoom: 9
+    });}
 
     var coords = [
         [55.023496, 82.974670],

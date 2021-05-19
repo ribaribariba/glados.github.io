@@ -34,7 +34,7 @@ function init(){
 
     var myCollection = new ymaps.GeoObjectCollection({}, {
         iconLayout: 'default#image',
-        iconImageHref: '../img/cards/marker.png',
+        iconImageHref: 'img/cards/marker.png',
         iconImageSize: [49, 71],
         iconImageOffset: [-3, -42]
     });

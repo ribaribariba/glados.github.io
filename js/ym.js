@@ -2,6 +2,7 @@
 
 ymaps.ready(init);
 function init(){
+
     var width = document.documentElement.clientWidth;
     var myMap;
 
@@ -16,14 +17,24 @@ function init(){
             zoom: 9
     });}
 
+
+
     var coords = [
         [55.023496, 82.974670],
         [55.105011, 82.951359],
         [55.026711, 82.443433]
+
     ];
+
+    var gasStation = [
+        ["Нефтесиб: Никитина 107а к2"],
+        ["АЗС Родники: Тюленина 2а к1"],
+        ["Магистраль: с. Прокудское, ул. Советская 261А"]
+    ];
+
     var myCollection = new ymaps.GeoObjectCollection({}, {
         iconLayout: 'default#image',
-        iconImageHref: 'img/cards/marker.png',
+        iconImageHref: '../img/cards/marker.png',
         iconImageSize: [49, 71],
         iconImageOffset: [-3, -42]
     });
@@ -35,8 +46,8 @@ function init(){
         console.log(myPlacemark);
         myCollection.add(new ymaps.Placemark(coords[i], {
             balloonContentHeader: "АЗС-партнеры Glados-cards",
-            balloonContentBody: "Роснефть",
-            hintContent: "Роснефть"
+            balloonContentBody: gasStation[i],
+            hintContent: gasStation[i]
         }));
     }
 

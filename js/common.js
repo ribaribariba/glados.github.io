@@ -2,11 +2,26 @@ $(function() {
 
     $(window).on("load",function(){
 
-        $("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+        $("a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
             highlightSelector:".pure-menu-list a"
         });
 
     });
+
+    const anchors = document.querySelectorAll('.cards__advantage a');
+
+    for (let anchor of anchors) {
+        anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const blockID = anchor.getAttribute('href').substr(1);
+
+        document.getElementById(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+        });
+        });
+      }
 
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
@@ -308,4 +323,3 @@ $(function() {
         var svgb1 = svgDocument.getElementsByTagName('path');
         svgb1[148].setAttribute("class", "active-area");
     }
-
